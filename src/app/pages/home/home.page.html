@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Inventario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<ion-text>Cuando encuentre un producto, presione "Escanear", apunte la cámara hacia el código de barras, fíjela en el centro, Y espere que la aplicación busque el recurso.</ion-text>-->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Inventario de Equipos</ion-card-subtitle>
+      <ion-card-title>Depto TI</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Cuando encuentre un producto, presione "Escanear", apunte la cámara hacia el código de barras, fíjela en el centro, Y espere que la aplicación busque el recurso.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button color="success" expand="full" (click)="scan()">Escanear </ion-button>
+
+  <ion-card *ngIf="productFound">
+    <ion-card-header>
+      <ion-label>Código: {{selectedProduct.codigo}}</ion-label>
+      <h2>Tipo: {{selectedProduct.tipo}}</h2>
+      <h2>Marca/Modelo: {{selectedProduct.marca_modelo}}</h2>
+      <h2>Nº Serie: {{selectedProduct.numero_serie}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>Estado: {{selectedProduct.estado}}</li>
+        <li>Responsable: {{selectedProduct.nombre_responsable}}</li>
+        <li>Ubicación: {{selectedProduct.ubicacion}}</li>
+        <li>Fecha Ingreso: Ubicación: {{selectedProduct.fecha_de_ingresao}}</li>
+        <li>Nº Factura: {{selectedProduct.numero_factura_guia}}</li>
+        <li>Procedencia: {{selectedProduct.procedencia}}</li>
+        <li>Fecha de Baja: {{selectedProduct.fecha_de_baja}}</li>
+        <li>Observación: {{selectedProduct.observacion_motivo_de_baja}}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
